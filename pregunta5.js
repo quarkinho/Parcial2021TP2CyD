@@ -19,4 +19,16 @@ const beers = [
     { name: 'Belgian Wit', abv: 5.4, label: 'https://s3.amazonaws.com/brewerydbapi/beer/3CvVQG/upload_xOMnlK-large.png', type: 'Wheat' },
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
+  function changeBeers(beers){
+    // NO SE NI QUE ESTOY HACIENDO PROFE JAJ
+    beers.forEach(beer => {
+      beer.label = beer.label.split('beer/');
+      beer.label[0] = 'https://tecnoshare.sharepoint.com/sites/beer/';
+      beer.label[1] = beer.label[1].replace(beer.label[1].split("/")[1] , beer.name + '.png');
+      beer.label = beer.label.join('');
+      beer.label = beer.label.replace(' ' , '_');
+    });
+    return beers;
+  }
 
+  console.log(changeBeers(beers));

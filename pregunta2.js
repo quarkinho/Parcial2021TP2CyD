@@ -15,7 +15,11 @@
   }
 
 const sale = function (article, cant){
-  
+  if(inventory[article] >= cant){
+    inventory[article] -= cant;
+    return 200;
+  }
+    return 500;
 }
 
 // TESTS (no modificar)
